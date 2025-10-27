@@ -1,0 +1,48 @@
+name: tos-webtop
+services:
+  webtop:
+    # Uses the specific Ubuntu-based MATE tag from LinuxServer.io
+    image: lscr.io/linuxserver/webtop:ubuntu-mate
+    container_name: webtop-mate
+    
+    # Optional: Needed for some modern GUI apps to function properly on older hosts/kernels
+    # security_opt:
+    #   - seccomp:unconfined
+
+    environment:
+      # Set your User ID and Group ID to match the host user (run 'id $USER' in your terminal)
+      - PUID=1000 
+      - PGID=1000
+      # Set your timezone
+      - TZ=Etc/UTC 
+      - SUBFOLDER=/ # Optional: for reverse proxies
+    
+    volumes:
+      # Change /path/to/data to the directory on your host for persistent config/files
+      - tos-webtop-config:/config
+      - .:/codespace
+      # Uncomment the next line if you want to run Docker inside Webtop
+      # - /var/run/docker.sock:/var/run/docker.sock
+
+    ports:
+      # Access the Webtop GUI on port 3000 (http)
+      - 3000:3000
+      # Optional: Access the Webtop GUI on port 3001 (https)
+      - 3001:3001
+      
+    # Recommended to prevent modern web browsers from crashing
+    shm_size: "1gb" 
+    
+    # Ensures the container restarts automatically unless you explicitly stop it
+    restart: unless-stopped
+
+    networks:
+      - tos-webtop-net
+
+networks:
+  tos-webtop-net:
+    driver: bridge
+
+volumes:
+  tos-webtop-config:
+    name: tos-webtop-config
