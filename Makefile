@@ -1,4 +1,5 @@
 DOCKER_NAME=webtop
+DOCKER_IMAGE_NAME=tos-webtop
 VOLUME_NAME=tos-webtop-config
 BACKUP_FILE=tos_config_backup.tar.gz
 BACKUP_DIR=./backup
@@ -57,3 +58,6 @@ restore:
 	  sh -c "cd /volume && rm -rf * && tar xzf /backup/$(BACKUP_FILE)"
 	@echo "Restore complete!"
 	docker compose up -d
+
+docker-build:
+	docker build -t $(DOCKER_IMAGE_NAME) .
