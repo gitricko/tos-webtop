@@ -45,5 +45,5 @@ networks:
 
 volumes:
   tos-webtop-config:
-    external: true
+    external: false
     name: tos-webtop-config
