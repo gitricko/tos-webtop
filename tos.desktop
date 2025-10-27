@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=bash -c "/tmp/thinkorswim_expect_script.sh > /tmp/tos-install.log"
+Hidden=false
+Name[en_US]=ToS Desktop Installer
+Name=ToS Desktop Installer
+Comment[en_US]=Install ToS Desktop if it has not installed
+Comment=Install ToS Desktop if it has not installed
+X-MATE-Autostart-Delay=0
