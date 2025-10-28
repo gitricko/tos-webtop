@@ -2,7 +2,7 @@ FROM lscr.io/linuxserver/webtop:ubuntu-mate
 
 # Install OpenJDK 21 (or your required version)
 RUN sudo apt-get update && \
-    sudo apt-get install -y openjdk-21-jdk expect && \
+    sudo apt-get install -y openjdk-21-jre expect && \
     sudo apt-get clean && \
     sudo rm -rf /var/lib/apt/lists/*
 
