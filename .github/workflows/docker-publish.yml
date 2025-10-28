@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -f ./docker/Dockerfile -t tos-webtop:test ./docker
+          DOCKER_URI=tos-webtop docker build -f ./docker/Dockerfile -t tos-webtop:test ./docker
           
       - name: Test Docker image
         run: |
