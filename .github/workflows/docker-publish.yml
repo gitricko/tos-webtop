@@ -40,7 +40,7 @@ jobs:
       - name: Test Docker image
         run: |
           docker run --rm tos-webtop:test > /tmp/test.log &
-          sleep 10
+          sleep 60
           
           if grep -q "Data WebSocket Server listening on port 8082" /tmp/test.log; then
             echo "Build successful"
