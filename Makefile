@@ -9,6 +9,10 @@ BACKUP_DIR=./backup
 download-thinkswim-installer:
 	curl -O https://tosmediaserver.schwab.com/installer/InstFiles/thinkorswim_installer.sh
 
+install-dev-dependencies:
+	sudo apt-get update
+	sudo apt-get install -y expect openjdk-21-jre
+
 start:
 	docker compose up -d
 	docker compose logs -f
@@ -60,4 +64,4 @@ restore:
 	docker compose up -d
 
 docker-build:
-	docker build -t $(DOCKER_IMAGE_NAME) .
+	docker build -t $(DOCKER_IMAGE_NAME)  -f ./docker/Dockerfile ./docker

@@ -2,7 +2,7 @@ name: tos-webtop
 services:
   webtop:
     # Uses the specific Ubuntu-based MATE tag from LinuxServer.io
-    image: tos-webtop:latest
+    image: ${DOCKER_URI:-ghcr.io/gitricko/tos-webtop:latest}
     container_name: webtop-mate
     
     # Optional: Needed for some modern GUI apps to function properly on older hosts/kernels
