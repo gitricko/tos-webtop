@@ -64,4 +64,4 @@ restore:
 	docker compose up -d
 
 docker-build:
-	docker build -t $(DOCKER_IMAGE_NAME) .
+	docker build -t $(DOCKER_IMAGE_NAME)  -f ./docker/Dockerfile ./docker

@@ -3,8 +3,14 @@ name: Build and Push Docker Image
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'docker/**'
+
   pull_request:
     branches: [ main ]
+    paths:
+      - 'docker/**'
+
   release:
     types: [ published ]
   workflow_dispatch:
@@ -95,7 +101,7 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          file: ./Dockerfile
+          file: ./docker/Dockerfile
           push: true
           tags: |
             ghcr.io/${{ env.LOWERCASE_REPO }}:${{ env.IMAGE_TAG }}
