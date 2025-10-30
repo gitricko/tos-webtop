@@ -1,6 +1,8 @@
 # ToS-WebTop
 ThinkorSwim Desktop in a web browser (WebTop)
 
+<video src="https://github.com/user-attachments/assets/cd0009e9-cd35-4166-9701-dd0c3edbbdec"></video>
+
 Use lightweight GitHub's CodeSpace to host an Ubuntu desktop in the browser with Thinkorswim (TOS) trading desktop pre-installed so you can access it from anywhere and trade in any device securely. 
 
 This README is focused on practical steps: quick start, backup & restore, common commands, troubleshooting, and security guidance for running the environment in Codespaces.
