@@ -58,7 +58,7 @@ See the `Makefile` for implementation details and any additional targets.
 
 ## Security & licensing notes
 
-- Thinkorswim is a proprietary application. This repository only automates running the Thinkorswim installer in a containerized desktop environment; you are responsible for complying with Thinkorswim's license and terms.
+- Thinkorswim is a proprietary application. This repository only automates running the [Thinkorswim installer](https://tosmediaserver.schwab.com/installer/InstFiles/thinkorswim_installer.sh) in a containerized desktop environment; you are responsible for complying with Thinkorswim's license and terms.
 - This project is provided as-is for personal/self-hosted use.
 
 ## Security Considerations for Running ToS Desktop in Codespaces
