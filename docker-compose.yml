@@ -14,7 +14,7 @@ services:
       - PUID=1000 
       - PGID=1000
       # Set your timezone
-      - TZ=Etc/UTC 
+      - TZ=America/New_York 
       - SUBFOLDER=/ # Optional: for reverse proxies
     
     volumes:
