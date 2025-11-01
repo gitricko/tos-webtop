@@ -1,9 +1,34 @@
 # ToS-WebTop
+
+[![Last Docker Image Push](https://github.com/gitricko/tos-webtop/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/gitricko/tos-webtop/actions/workflows/docker-publish.yml)
+[![License](https://img.shields.io/github/license/gitricko/tos-webtop)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/gitricko/tos-webtop)](https://github.com/gitricko/tos-webtop/issues)
+
 ThinkorSwim Desktop in a web browser (WebTop)
 
 <video src="https://github.com/user-attachments/assets/cd0009e9-cd35-4166-9701-dd0c3edbbdec" autoplay loop muted></video>
 
-Use lightweight GitHub's CodeSpace to host an Ubuntu desktop in the browser with Thinkorswim (TOS) trading desktop pre-installed so you can access it from anywhere and trade in any device securely. 
+Use lightweight GitHub's CodeSpace to host an Ubuntu desktop in the browser with Thinkorswim (TOS) trading desktop pre-installed so you can access it from anywhere and trade in any device securely.
+
+## Table of Contents
+- [Quick Start](#quick-start)
+- [System Requirements](#system-requirements)
+- [Backup](#backup)
+- [Restore](#restore)
+- [Common Commands](#common-commands)
+- [Security & Licensing Notes](#security--licensing-notes)
+- [Security Considerations](#security-considerations-for-running-tos-desktop-in-codespaces)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Backup Retention](#backup-retention-and-codespaces-lifecycle)
+- [License](#license)
+
+## System Requirements
+- GitHub account with Codespaces access
+- Modern web browser (Chrome, Firefox, Safari, or Edge)
+- Stable internet connection
+- At least 4GB of available RAM in Codespace
+- Minimum 8GB storage space 
 
 This README is focused on practical steps: quick start, backup & restore, common commands, troubleshooting, and security guidance for running the environment in Codespaces.
 
@@ -74,13 +99,38 @@ Running ToS Desktop in GitHub Codespaces is secure, as access to the Codespace U
 
 By following these steps, you can minimize any security risks and safely use Tos Desktop in Codespaces.
 
+## Troubleshooting
+
+### Common Issues and Solutions
+
+1. **Desktop Not Loading**
+   - Check if the container is running using `docker ps`
+   - Ensure ports are properly forwarded in Codespace
+   - Try `make reset` followed by `make start`
+
+2. **ThinkOrSwim Installation Failed**
+   - Run `make reset` and try the installation again
+   - Ensure sufficient disk space is available
+
+3. **Performance Issues**
+   - Close unused ToS detached windows
+   - Consider upgrading your Codespace machine type from default 2cores 8G to 4cores 16G.
+
+For additional support, please [open an issue](https://github.com/gitricko/tos-webtop/issues) with:
+- Detailed description of the problem
+- Steps to reproduce
+- Error messages or logs
+- Your environment details
+
 ## Contributing
 
 Small improvements, documentation fixes, or makefile tweaks are welcome. Open a PR with a focused change and a brief description.
 
 ## Backup retention and Codespaces lifecycle
 
-GitHub may delete inactive Codespaces after a period of inactivity (typically 30 days). Periodically run `make backup` and store the resulting zip outside GitHub to avoid losing your environment.
+GitHub may delete inactive Codespaces after a period of inactivity (typically 30 days). Periodically run `make backup` and store the resulting zip outside GitHub to avoid losing your environment. 
+
+Another options is to turn off (default enabled) `Auto-delete codespace` option in codespace creation dropdown
 
 ## License
 
