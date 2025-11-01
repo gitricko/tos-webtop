@@ -1,6 +1,6 @@
-````markdown
 # ToS-WebTop
 
+[![Last Docker Image Push](https://github.com/gitricko/tos-webtop/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/gitricko/tos-webtop/actions/workflows/docker-publish.yml)
 [![License](https://img.shields.io/github/license/gitricko/tos-webtop)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/gitricko/tos-webtop)](https://github.com/gitricko/tos-webtop/issues)
 
