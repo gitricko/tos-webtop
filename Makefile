@@ -43,15 +43,10 @@ backup:
 	  alpine \
 	  tar czf /backup/$(BACKUP_FILE) -C /volume .
 	
-# 	git lfs install
-# 	git lfs track "*.tar.gz"
 	@echo "Backup complete! Size of file: $$(du -h backup/$(BACKUP_FILE) | awk '{print $$1}')"
 	docker compose up -d
 
 restore:
-	# pull lfs files if necessary
-# 	git lfs install
-# 	git lfs ls-files | grep -qv "^\*" && git lfs pull || { exit 0; }
 	@test -f "$(BACKUP_DIR)/$(BACKUP_FILE)" || (echo "Error: $(BACKUP_DIR)/$(BACKUP_FILE) does not exist" && exit 1)
 	@echo "Restoring volume: $(VOLUME_NAME) from $(BACKUP_DIR)/$(BACKUP_FILE)"
 	docker compose down
