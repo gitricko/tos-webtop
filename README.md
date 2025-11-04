@@ -27,9 +27,9 @@ Use lightweight GitHub's CodeSpace to host an Ubuntu desktop in the browser with
 - GitHub account with Codespaces access
 - Modern web browser (Chrome, Firefox, Safari, or Edge)
 - Stable internet connection
-- At least 4GB of available RAM in Codespace
-- Minimum 8GB storage space 
-
+- At least 2 cpu and 8 GB of available RAM in Codespace (default codespace)
+- For self-hosting, use only **AMD64** architecture. ARM Linux is not supported by ToS Desktop for now.
+  
 This README is focused on practical steps: quick start, backup & restore, common commands, troubleshooting, and security guidance for running the environment in Codespaces.
 
 ## Quick start
